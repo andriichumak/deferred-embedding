@@ -23,7 +23,7 @@ const RedirectIfNotLoggedIn: React.FC = () => {
 const AppRouter: React.FC = () => {
     return (
         <div className={styles.AppRouter}>
-            <Router>
+            <Router basename="/deferred-embedding">
                 {/* WorkspaceProvider depends on Router so it must be nested */}
                 <WorkspaceProvider>
                     <Route exact path="/" component={Home} />
@@ -31,7 +31,7 @@ const AppRouter: React.FC = () => {
                     <Route exact path="/dashboard" component={() => <Page>Dashboard</Page>} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />
-                     <RedirectIfNotLoggedIn />
+                    <RedirectIfNotLoggedIn />
                 </WorkspaceProvider>
             </Router>
         </div>
